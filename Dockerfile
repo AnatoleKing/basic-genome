@@ -12,13 +12,13 @@ libbz2-dev libncurses-dev liblzma-dev bedtools python3-pip
 
 
 # install bio tools.
-RUN cd /bioTools/bwa && make 
-RUN cd /bioTools && tar -jxvf htslib-1.9.tar.bz2 && cd htslib-1.9 && make && make install 
-RUN cd /bioTools && tar -jxvf samtools-1.9.tar.bz2 && cd samtools-1.9 && make && make install 
-RUN cd /bioTools && tar -jxvf bcftools-1.9.tar.bz2 && cd bcftools-1.9 && make && make install 
-RUN cd /bioTools && tar -zxvf jdk-8u211-linux-x64.tar.gz 
-RUN cd /bioTools && unzip gatk-4.1.2.0.zip 
-RUN chmod a+x /bioTools/fastp
+RUN cd /bioTools/bwa && make \
+&& cd /bioTools && tar -jxvf htslib-1.9.tar.bz2 && cd htslib-1.9 && make && make install \
+&& cd /bioTools && tar -jxvf samtools-1.9.tar.bz2 && cd samtools-1.9 && make && make install \
+&& cd /bioTools && tar -jxvf bcftools-1.9.tar.bz2 && cd bcftools-1.9 && make && make install \
+&& cd /bioTools && tar -zxvf jdk-8u211-linux-x64.tar.gz \
+&& cd /bioTools && unzip gatk-4.1.2.0.zip \
+&& chmod a+x /bioTools/fastp
 
 #set python
 RUN ln -s /usr/bin/python2.7 /usr/bin/python \
